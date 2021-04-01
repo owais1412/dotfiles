@@ -10,9 +10,10 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'ryanoasis/vim-devicons'
 Plug 'airblade/vim-gitgutter'
-Plug 'ctrlpvim/ctrlp.vim' " fuzzy find files
+"Plug 'ctrlpvim/ctrlp.vim' " fuzzy find files
 Plug 'scrooloose/nerdcommenter'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+"Plug 'codota/tabnine-vim'
 
 Plug 'neovim/nvim-lspconfig'
 Plug 'mxw/vim-jsx'
@@ -77,7 +78,7 @@ command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
 
 " ctrlp
-let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+"let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 
 " j/k will move virtual lines (lines that wrap)
 noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
@@ -282,4 +283,4 @@ let g:airline#extensions#tabline#formatter = 'default'
 lua require'lspconfig'.tsserver.setup{}
 "set clipboard=unnamed
 "set clipboard=unnamedplus
-
+:imap jj <Esc>
