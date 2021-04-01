@@ -1,0 +1,104 @@
+[global_config]
+  title_transmit_bg_color = "#4e9a06"
+[keybindings]
+  switch_to_tab_1 = <Alt>1
+  switch_to_tab_2 = <Alt>2
+  switch_to_tab_3 = <Alt>3
+  switch_to_tab_4 = <Alt>4
+  switch_to_tab_5 = <Alt>5
+  switch_to_tab_6 = <Alt>6
+  switch_to_tab_7 = <Alt>7
+  switch_to_tab_8 = <Alt>8
+  switch_to_tab_9 = <Alt>9
+[profiles]
+  [[default]]
+    cursor_color = "#aaaaaa"
+    font = Ubuntu Mono 12
+    use_system_font = False
+[layouts]
+  [[default]]
+    [[[child0]]]
+      type = Window
+      parent = ""
+      order = 0
+      position = 0:27
+      maximised = True
+      fullscreen = False
+      size = 1366, 668
+      title = owais@owais-PC
+      last_active_window = True
+    [[[child1]]]
+      type = Notebook
+      parent = child0
+      order = 0
+      labels = None, None, None, None
+      last_active_term = 954ade06-ce90-41c8-97df-ffa500231f43, 2f3cbff6-5ae0-4ed9-9c72-cac1aeb4a182, a5b9e7c8-dd1f-4f74-8eb9-e8dd429bb46d, d4853799-58fb-4b8d-8d87-95424f350ce8
+      active_page = 3
+    [[[terminal2]]]
+      type = Terminal
+      parent = child1
+      order = 0
+      profile = default
+      uuid = 954ade06-ce90-41c8-97df-ffa500231f43
+      command = cd /home/owais/HashCube/mahjongg-quest-server && nvim .; zsh
+    [[[terminal3]]]
+      type = Terminal
+      parent = child1
+      order = 1
+      profile = default
+      uuid = 2f3cbff6-5ae0-4ed9-9c72-cac1aeb4a182
+      command = cd /home/owais/HashCube/mq-mobile && nvim .; zsh
+    [[[child4]]]
+      type = VPaned
+      parent = child1
+      order = 2
+      position = 312
+      ratio = 0.5
+    [[[terminal5]]]
+      type = Terminal
+      parent = child4
+      order = 0
+      profile = default
+      uuid = a5b9e7c8-dd1f-4f74-8eb9-e8dd429bb46d
+      command = cd /home/owais/HashCube/mahjongg-quest-server; zsh
+    [[[child6]]]
+      type = HPaned
+      parent = child4
+      order = 1
+      position = 682
+      ratio = 0.5018395879323032
+    [[[terminal7]]]
+      type = Terminal
+      parent = child6
+      order = 0
+      profile = default
+      uuid = fe1b5279-5023-47a1-8dda-b085aec2a3c6
+      command = cd /home/owais/HashCube/mahjongg-quest-server; zsh
+    [[[terminal8]]]
+      type = Terminal
+      parent = child6
+      order = 1
+      profile = default
+      uuid = 7668de36-2b97-40b0-b69e-4e84535da4ab
+      command = cd /home/owais/HashCube/mahjongg-quest-server; zsh
+    [[[child9]]]
+      type = HPaned
+      parent = child1
+      order = 3
+      position = 680
+      ratio = 0.5003679175864606
+    [[[terminal10]]]
+      type = Terminal
+      parent = child9
+      order = 0
+      profile = default
+      uuid = d4853799-58fb-4b8d-8d87-95424f350ce8
+      command = cd /home/owais/HashCube/mahjongg-quest-server; zsh
+    [[[terminal11]]]
+      type = Terminal
+      parent = child9
+      order = 1
+      profile = default
+      uuid = 959fe6a2-b42c-4468-9d23-ca4596fe9e49
+      command = cd /home/owais/HashCube/mq-mobile; zsh
+[plugins]
