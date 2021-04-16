@@ -30,9 +30,12 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tomasiser/vim-code-dark'
 Plug 'dunstontc/vim-vscode-theme'
-Plug 'svermeulen/vim-easyclip'
+"Plug 'rakr/vim-one'
+"Plug 'drewtempelmeyer/palenight.vim'
+"Plug 'joshdick/onedark.vim'
+"Plug 'svermeulen/vim-easyclip'
 
-Plug 'HerringtonDarkholme/yats.vim' " TS Syntax
+"Plug 'HerringtonDarkholme/yats.vim' " TS Syntax
 
 " Initialize plugin system
 call plug#end()
@@ -108,6 +111,7 @@ set cursorline
 "colorscheme dracula
 "colorscheme vimterial_dark
 "colorscheme codedark
+
 colorscheme dark_plus
 let g:lightline = { 'colorscheme': 'bluewery' }
 colors codedark
@@ -175,6 +179,11 @@ inoremap <silent><expr> <c-space> coc#refresh()
 " Use Ctrl+q to quit file
 :nmap <c-q> :q<CR>
 :imap <c-q> <Esc>:q<CR>a
+
+" Use Alt+f for FZF
+nnoremap <A-f> :FZF
+:nmap <A-f> :FZF<CR>
+:imap <A-f> :FZF<CR>
 
 " Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
 " Coc only does snippet and additional edit on confirm.

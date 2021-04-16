@@ -136,16 +136,20 @@ alias vd="vim ."
 alias mqsv="mqs && vd"
 alias mqmv="mqm && vd"
 # Add environment variable NDK_ROOT for cocos2d-x
-export NDK_ROOT=/usr/lib/android-ndk-r21d
+#export NDK_ROOT=/usr/lib/android-ndk-r21d
+export NDK_ROOT=/usr/lib/android-ndk-r16b
+export ANDROID_NDK_HOME=$NDK_ROOT
 export PATH=$NDK_ROOT:$PATH
 
 # Add environment variable ANDROID_SDK_ROOT for cocos2d-x
 export ANDROID_SDK_ROOT=/home/owais/Android/Sdk
 export PATH=$ANDROID_SDK_ROOT:$PATH
+export PATH=$ANDROID_SDK_ROOT/platform-tools:$PATH
+export PATH=$ANDROID_SDK_ROOT/build-tools/28.0.3:$PATH
 
 export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"
 export ANDROID_HOME=/home/owais/Android/Sdk
-#export PATH=$ANDROID_HOME/cmdline-tools/tools/bin:$PATH
+export PATH=$ANDROID_HOME/cmdline-tools/tools/bin:$PATH
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
