@@ -41,14 +41,14 @@
       order = 0
       profile = default
       uuid = 954ade06-ce90-41c8-97df-ffa500231f43
-      command = cd /home/owais/HashCube/mahjongg-quest-server && nvim .; zsh
+      command = cd /home/owais/HashCube/mahjongg-quest-server && nvim; zsh
     [[[terminal3]]]
       type = Terminal
       parent = child1
       order = 1
       profile = default
       uuid = 2f3cbff6-5ae0-4ed9-9c72-cac1aeb4a182
-      command = cd /home/owais/HashCube/mq-mobile && nvim .; zsh
+      command = cd /home/owais/HashCube/mq-mobile && nvim; zsh
     [[[child4]]]
       type = VPaned
       parent = child1
