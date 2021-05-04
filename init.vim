@@ -30,6 +30,12 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tomasiser/vim-code-dark'
 Plug 'dunstontc/vim-vscode-theme'
+Plug 'mhinz/vim-startify'
+"Plug 'altercation/vim-colors-solarized'
+"Plug 'altercation/solarized'
+"Plug 'lifepillar/vim-solarized8'
+Plug 'mhinz/vim-janah'
+
 "Plug 'rakr/vim-one'
 "Plug 'drewtempelmeyer/palenight.vim'
 "Plug 'joshdick/onedark.vim'
@@ -111,10 +117,13 @@ set cursorline
 "colorscheme dracula
 "colorscheme vimterial_dark
 "colorscheme codedark
+"colorscheme dark_plus
+"colorscheme solarized8_high
 
-colorscheme dark_plus
+autocmd ColorScheme janah highlight Normal ctermbg=235
+colorscheme janah
 let g:lightline = { 'colorscheme': 'bluewery' }
-colors codedark
+"colors codedark
 let g:airline_theme = 'codedark'
 
 " sync open file with NERDTree
@@ -289,7 +298,11 @@ nnoremap <silent> <C-f> :GFiles<CR>
 "nnoremap gf :YcmCompleter FixIt<CR>
 let g:go_echo_command_info=0
 let g:airline#extensions#tabline#formatter = 'default'
-lua require'lspconfig'.tsserver.setup{}
+"lua require'lspconfig'.tsserver.setup{}
 "set clipboard=unnamed
 "set clipboard=unnamedplus
 :imap jj <Esc>
+
+" vim session
+let g:startify_session_dir = '~/.vim/session'
+
