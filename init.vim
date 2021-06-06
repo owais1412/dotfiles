@@ -35,6 +35,8 @@ Plug 'mhinz/vim-startify'
 "Plug 'altercation/solarized'
 "Plug 'lifepillar/vim-solarized8'
 Plug 'mhinz/vim-janah'
+Plug 'vim-ruby/vim-ruby'
+Plug 'jiangmiao/auto-pairs'
 
 "Plug 'rakr/vim-one'
 "Plug 'drewtempelmeyer/palenight.vim'
@@ -53,11 +55,28 @@ nmap ++ <plug>NERDCommenterToggle
 nnoremap <C-e> :NERDTreeFind<CR>
 map <C-y> :tabnew<CR>
 map <C-u> :tabp<CR>
+map <S-TAB> :tabp<CR>
 map <C-i> :tabn<CR>
 let g:NERDTreeWinSize=30
 " open NERDTree automatically
 "autocmd StdinReadPre * let s:std_in=1
 "autocmd VimEnter * NERDTree
+
+let g:NERDSpaceDelims = 1
+" Use compact syntax for prettified multi-line comments
+let g:NERDCompactSexyComs = 1
+" Align line-wise comment delimiters flush left instead of following code indentation
+let g:NERDDefaultAlign = 'left'
+" Set a language to use its alternate delimiters by default
+let g:NERDAltDelims_java = 1
+" Add your own custom formats or override the defaults
+let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
+" Allow commenting and inverting empty lines (useful when commenting a region)
+let g:NERDCommentEmptyLines = 1
+" Enable trimming of trailing whitespace when uncommenting
+let g:NERDTrimTrailingWhitespace = 1
+" Enable NERDCommenterToggle to check all selected lines is commented or not
+let g:NERDToggleCheckAllLines = 1
 
 let g:NERDTreeGitStatusWithFlags = 1
 "let g:WebDevIconsUnicodeDecorateFolderNodes = 1
@@ -184,6 +203,13 @@ inoremap <silent><expr> <c-space> coc#refresh()
 " Use Ctrl+s to save file
 :nmap <c-s> :w<CR>
 :imap <c-s> <Esc>:w<CR>
+" Use Ctrl+Alt+s to save session
+:nmap <C-A-s> :SSave<CR>
+:imap <C-A-s> <Esc>:SSave<CR>
+
+" Use Ctrl+Alt+q to close session
+:nmap <C-A-q> :SClose<CR>
+:imap <C-A-q> <Esc>:SClose<CR>
 
 " Use Ctrl+q to quit file
 :nmap <c-q> :q<CR>
@@ -194,6 +220,8 @@ nnoremap <A-f> :FZF
 :nmap <A-f> :FZF<CR>
 :imap <A-f> :FZF<CR>
 
+" Use Alf+g for Ag unrestricted search
+":map <A-g> :FZF
 " Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
 " Coc only does snippet and additional edit on confirm.
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
@@ -294,10 +322,22 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 nnoremap <silent> <C-f> :GFiles<CR>
+
 "nnoremap gd :YcmCompleter GoTo<CR>
 "nnoremap gf :YcmCompleter FixIt<CR>
 let g:go_echo_command_info=0
-let g:airline#extensions#tabline#formatter = 'default'
+"let g:airline#extensions#tabline#formatter = 'default'
+"let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+let g:airline#extensions#tabline#enabled = 1
+" Change airline positions
+function! AirlineInit()
+  let g:airline_section_b = airline#section#create(['branch'])
+  let g:airline_section_x = airline#section#create(['hunks'])
+  let g:airline_section_y = '%y'
+endfunction
+autocmd User AirlineAfterInit call AirlineInit()
+"let g:airline#extensions#tabline#left_alt_sep = '|'
+
 "lua require'lspconfig'.tsserver.setup{}
 "set clipboard=unnamed
 "set clipboard=unnamedplus
@@ -306,3 +346,7 @@ let g:airline#extensions#tabline#formatter = 'default'
 " vim session
 let g:startify_session_dir = '~/.vim/session'
 
+"noremap <C-S-a> "*y
+" Copy paste from one vim instance to other
+map <silent> <C-c> "+y
+map <C-S-v> "+p
