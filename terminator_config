@@ -13,7 +13,7 @@
 [profiles]
   [[default]]
     cursor_color = "#aaaaaa"
-    font = Ubuntu Mono 12
+    font = FiraMono Nerd Font Bold 10
     scrollback_infinite = True
     use_system_font = False
 [layouts]
