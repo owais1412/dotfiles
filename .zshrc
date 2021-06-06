@@ -16,12 +16,13 @@ export ZSH="/home/owais/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="powerlevel10k/powerlevel10k"
-plugins=(zsh-autosuggestions)
-#plugins=(git z colored-man-pages zsh-syntax-highlighting zsh-autosuggestions)
+#plugins=(zsh-autosuggestions)
+POWERLEVEL9K_MODE="nerdfont-complete"
+plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=60"
 ZSH_AUTOSUGGEST_STRATEGY="history"
-source ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+#source ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+#source ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
@@ -80,7 +81,7 @@ source ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighti
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+#plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -150,6 +151,7 @@ export PATH=$ANDROID_SDK_ROOT/build-tools/28.0.3:$PATH
 export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"
 export ANDROID_HOME=/home/owais/Android/Sdk
 export PATH=$ANDROID_HOME/cmdline-tools/tools/bin:$PATH
+export BUNDLETOOL_PATH=~/Downloads/bundletool-all-1.5.0.jar
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -157,3 +159,6 @@ autoload -U compinit && compinit
 autoload -U bashcompinit && bashcompinit
 autoload -U colors && colors
 #PS1="%{$fg[red]%}%n%{$reset_color%}@%{$fg[blue]%}%m %{$fg[yellow]%}%~ %{$reset_color%}%% "
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
