@@ -350,3 +350,9 @@ let g:startify_session_dir = '~/.vim/session'
 " Copy paste from one vim instance to other
 map <silent> <C-c> "+y
 map <C-S-v> "+p
+
+set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+
+autocmd VimLeavePre * :call coc#rpc#kill()
+autocmd VimLeave * if get(g:, 'coc_process_pid', 0) | call system('kill -9 -'.g:coc_process_pid) | endif
+
