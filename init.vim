@@ -38,6 +38,7 @@ Plug 'mhinz/vim-janah'
 Plug 'vim-ruby/vim-ruby'
 Plug 'jiangmiao/auto-pairs'
 
+Plug 'github/copilot.vim'
 "Plug 'rakr/vim-one'
 "Plug 'drewtempelmeyer/palenight.vim'
 "Plug 'joshdick/onedark.vim'
